@@ -31,4 +31,31 @@ if (class_exists('ACF')) {
       
   }
 
+	function splot_handle_form_submission( $form, $fields, $args ) {
+    	$data = $fields;    
+    	write_log($data); 
+    	write_log($form);    
+    	$title = $data[0]['value'];
+    	$url = $data[1]['value'];
+    	$text = $data[2]['value'];
+    	$cats = $data[3]['value'];
+    	$image = $data[4]['value']['ID'];
+    	$content = $text . '<a class="btn btn-primary" href="'. $url .'">See the SPLOT in Action</a>';
+
+
+    	$args = array(
+            'post_title' => wp_strip_all_tags($title),
+            'post_content' => $content,
+            'post_category' =>  $cats,
+            'post_status'   => 'publish',
+            'post_type' => 'splot',
+        );
+        $post = wp_insert_post($args);
+        set_post_thumbnail($post, $image);
+	}
+	 
+	add_action( 'af/form/submission', 'splot_handle_form_submission', 10, 3 );
+	 
+
+
 }

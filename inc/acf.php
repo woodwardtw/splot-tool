@@ -28,7 +28,6 @@ if (class_exists('ACF')) {
       $paths[] = get_stylesheet_directory() . '/acf-json';    
       // return
       return $paths;
-      
   }
 
 	function splot_handle_form_submission( $form, $fields, $args ) {
@@ -45,13 +44,17 @@ if (class_exists('ACF')) {
 
     	$args = array(
             'post_title' => wp_strip_all_tags($title),
-            'post_content' => $content,
+            //'post_content' => $content,
             'post_category' =>  $cats,
             'post_status'   => 'publish',
             'post_type' => 'splot',
         );
-        $post = wp_insert_post($args);
-        set_post_thumbnail($post, $image);
+        $post_id = wp_insert_post($args);
+        set_post_thumbnail($post_id, $image);
+        update_field('splot_title', $title, $post_id);
+        update_field('url', $url, $post_id);
+        update_field('description', $text, $post_id);
+
 	}
 	 
 	add_action( 'af/form/submission', 'splot_handle_form_submission', 10, 3 );

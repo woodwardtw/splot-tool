@@ -23,7 +23,7 @@ h1, h2, h3, .navbar-brand {
 	border: 1px solid #000;
 	background-color: $yellow;
 	padding: 10px;
-	margin: 20px auto;
+	margin: 20px auto 50px auto;
 	border-radius: 0;
 }
 
@@ -44,4 +44,11 @@ h1, h2, h3, .navbar-brand {
 
 .splot-screenshot{
 	box-shadow:  3px 3px 7px 0 rgba(222,222,222,.4);
+}
+
+.splot-meta {
+	margin-top: 40px;
+	border-bottom: 5px solid $yellow;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
 }

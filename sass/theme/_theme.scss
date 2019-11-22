@@ -13,3 +13,16 @@ p {
 	text-decoration: underline;
 }
 
+.btn-splot {
+	display: block;
+	width: 300px;
+	border: 1px solid #000;
+	background-color: $yellow;
+	padding: 10px;
+	margin: 20px auto;
+	border-radius: 0;
+}
+
+.btn-splot:hover{
+	background-color: #efefef;
+}

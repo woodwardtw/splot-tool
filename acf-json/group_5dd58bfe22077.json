@@ -84,7 +84,7 @@
         },
         {
             "key": "field_5dd58d3a5e994",
-            "label": "Media created by this SPLOT",
+            "label": "What media does this SPLOT focus on?",
             "name": "category",
             "type": "taxonomy",
             "instructions": "",
@@ -170,5 +170,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1574353963
+    "modified": 1574439689
 }

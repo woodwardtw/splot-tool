@@ -59,6 +59,10 @@ if (class_exists('ACF')) {
 	 
 	add_action( 'af/form/submission', 'splot_handle_form_submission', 10, 3 );
 	 
+	function splot_get_field($field_name){
+		$value = get_field($field_name);
+		return $value;
+	} 
 
 
 }

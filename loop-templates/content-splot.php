@@ -47,7 +47,7 @@ defined( 'ABSPATH' ) || exit;
 		<div class="splot-meta row">
 				<div class="col-md-12"><a class="btn btn-splot" href="<?php echo splot_get_field('url');?>">See the SLOT Live</a></div>		
 				<div class="meta-holder col-md-4">
-					<h2>SPLOT Type</h2>
+					<h2>Media Focus</h2>
 					<?php 
 					$cats = get_the_category($post->ID);
 					if ( ! empty( $cats ) ) {
@@ -61,7 +61,7 @@ defined( 'ABSPATH' ) || exit;
 					?>
 				</div>
 				<div class="meta-holder col-md-4">
-					<h2>Media Focus</h2>
+					<h2>SPLOT Type</h2>
 					<?php 
 					$cats = get_the_terms($post->ID, 'type');
 					if ( ! empty( $cats ) ) {

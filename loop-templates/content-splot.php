@@ -14,31 +14,31 @@ defined( 'ABSPATH' ) || exit;
 	<header class="entry-header">
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-		<div class="entry-meta">
-
-			<?php understrap_posted_on(); ?>
-
-		</div><!-- .entry-meta -->
-
+		
 	</header><!-- .entry-header -->
+	<div class="row">
+		<div class="col-md-6">
+			<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+		</div>
+		
+		<div class="entry-content col-md-6">
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+			<?php the_content(); ?>
+			<div class="splot-description">
+				<?php echo splot_get_field('description');?>
+			</div>
+			<a class="btn btn-splot" href="<?php echo splot_get_field('url');?>">See the SLOT Live</a>
+			<?php
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+					'after'  => '</div>',
+				)
+			);
+			?>
 
-	<div class="entry-content">
-
-		<?php the_content(); ?>
-		<a class="btn btn-splot" href="<?php echo splot_get_field('url');?>">See the SLOT Live</a>
-		<?php
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-
-	</div><!-- .entry-content -->
+		</div><!-- .entry-content -->
+	</div>
 
 	<footer class="entry-footer">
 

@@ -9,6 +9,10 @@ p {
 	font-family: sans-serif;
 }
 
+h1, h2, h3, .navbar-brand {
+	text-transform: uppercase;
+}
+
 #main a {
 	text-decoration: underline;
 }
@@ -25,4 +29,15 @@ p {
 
 .btn-splot:hover{
 	background-color: #efefef;
+}
+
+#main a.btn-splot {
+	text-decoration: none;
+}
+
+.splot-description {
+	margin: 20px 0 40px 0;
+	font-size: 1.1em;
+	line-height: 1.3em;
+	padding: 0 20px;
 }

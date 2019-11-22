@@ -49,7 +49,6 @@ defined( 'ABSPATH' ) || exit;
 				<div class="meta-holder col-md-4">
 					<h2>SPLOT Type</h2>
 					<?php 
-
 					$cats = get_the_category($post->ID);
 					if ( ! empty( $cats ) ) {
 						echo '<ul>';
@@ -63,6 +62,16 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 				<div class="meta-holder col-md-4">
 					<h2>Media Focus</h2>
+					<?php 
+					$cats = get_the_terms($post->ID, 'type');
+					if ( ! empty( $cats ) ) {
+						echo '<ul>';
+						foreach ($cats as $key => $cat) {
+							echo '<li><a href="' . esc_url( get_category_link( $cat->term_id ) ) . '">' . esc_html( $cat->name ) . '</a></li>';
+						}					   
+						echo '</ul>';
+					}
+					?>
 				</div>
 				<div class="meta-holder col-md-4">
 					<h2>Examples</h2>

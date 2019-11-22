@@ -33,7 +33,7 @@ defined( 'ABSPATH' ) || exit;
 			<div class="splot-description">
 				<?php echo splot_get_field('description');?>
 			</div>
-			<a class="btn btn-splot" href="<?php echo splot_get_field('url');?>">See the SLOT Live</a>
+			</div>
 			<?php
 			wp_link_pages(
 				array(
@@ -44,6 +44,29 @@ defined( 'ABSPATH' ) || exit;
 			?>
 
 		</div><!-- .entry-content -->
+		<div class="splot-meta row">
+				<div class="col-md-12"><a class="btn btn-splot" href="<?php echo splot_get_field('url');?>">See the SLOT Live</a></div>		
+				<div class="meta-holder col-md-4">
+					<h2>SPLOT Type</h2>
+					<?php 
+
+					$cats = get_the_category($post->ID);
+					if ( ! empty( $cats ) ) {
+						echo '<ul>';
+						foreach ($cats as $key => $cat) {
+							echo '<li><a href="' . esc_url( get_category_link( $cat->term_id ) ) . '">' . esc_html( $cat->name ) . '</a></li>';
+						}					   
+						echo '</ul>';
+					}
+
+					?>
+				</div>
+				<div class="meta-holder col-md-4">
+					<h2>Media Focus</h2>
+				</div>
+				<div class="meta-holder col-md-4">
+					<h2>Examples</h2>
+				</div>
 	</div>
 
 	<footer class="entry-footer">

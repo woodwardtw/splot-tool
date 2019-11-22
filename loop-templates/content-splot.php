@@ -18,7 +18,13 @@ defined( 'ABSPATH' ) || exit;
 	</header><!-- .entry-header -->
 	<div class="row">
 		<div class="col-md-6">
-			<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+			<?php 
+			if (has_post_thumbnail()){
+				echo get_the_post_thumbnail( $post->ID, 'large' ); 
+			} else {
+				echo '<img class="img-fluid splot-screenshot" src="' . get_field('image')['sizes']['large'] . '">';
+			}
+			;?>
 		</div>
 		
 		<div class="entry-content col-md-6">

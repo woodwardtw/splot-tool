@@ -75,6 +75,27 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 				<div class="meta-holder col-md-4">
 					<h2>Examples</h2>
+					<?php echo splot_get_wild_examples();?>
+				</div>
+				<div class="offset-md-3 col-md-6">
+					<!--form sub example-->
+					<div class="accordion" id="accordionExample">
+					  <div class="card">
+					    <div class="card-header" id="headingOne">
+					      <h2 class="mb-0">
+					        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#splotSub" aria-expanded="true" aria-controls="collapseOne">
+					          Submit an example of this SPLOT.
+					        </button>
+					      </h2>
+					    </div>
+
+					    <div id="splotSub" class="collapse" aria-labelledby="headingOne" data-parent="#splotSub">
+					      <div class="card-body">
+					        <?php gravity_form( 1, false, false, false, null, true);?>
+					      </div>
+					    </div>
+					  </div>
+					<!--form sub example end-->
 				</div>
 	</div>
 

@@ -37,6 +37,28 @@ foreach ( $understrap_includes as $file ) {
 }
 
 
+function splot_get_wild_examples(){
+	    global $post;
+		$search_criteria = array(
+	    'status'        => 'active',
+	    'field_filters' => array(
+	        array(
+	            'key'   => '4',
+	            'value' => $post->ID,
+	        )
+	    )
+	);
+	$entries = GFAPI::get_entries( 1, $search_criteria );
+	$html = '<ul>';
+	foreach ($entries as $key => $entry) {
+		$title = $entry[1];
+		$url = $entry[2];
+		$html .= '<li><a href="' . $url . '">' . $title . '</a></li>';
+	}
+	return $html . '</ul>';
+}
+
+
 //happy little logging function
 	if ( ! function_exists('write_log')) {
 	   function write_log ( $log )  {

@@ -43,7 +43,7 @@
             "key": "field_5dd58d195e993",
             "label": "Description",
             "name": "description",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "Please describe what this SPLOT does in a few sentences.",
             "required": 0,
             "conditional_logic": 0,
@@ -54,10 +54,10 @@
             },
             "hide_admin": 0,
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 6,
-            "new_lines": "wpautop"
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_5dd6bbbf0a205",
@@ -169,5 +169,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1574450770
+    "modified": 1574451052
 }

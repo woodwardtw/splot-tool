@@ -78,14 +78,16 @@ function splot_display_splots(){
                       while ( $the_query->have_posts() ) : $the_query->the_post();
                       global $post;
                       $clean_title = sanitize_title(get_the_title());                            
-                      $html .= '<div class="col-md-3">';
+                      $html .= '<div class="col-md-6 d-flex align-items-stretch"><div class="card">';
+                      $html .= '<div class="splot-thumb"><img class="img-fluid" src="';
                       if (has_post_thumbnail()){
-                      	$html .= get_the_post_thumbnail($post->ID,'medium', array( 'class' => 'img-fluid splot-thumb' ));
+                      	$html .= get_the_post_thumbnail_url($post->ID,'large');
                   		} else {
-                  			$html .= '<img class="img-fluid splot-thumb" src="' . get_stylesheet_directory_uri() . '/imgs/no-thumb.png">';
+                  		 $html .= get_stylesheet_directory_uri() . '/imgs/no-thumb.png';
                   		}
-                      $html .= '<a href="'.get_the_permalink().'">' . $clean_title . '</a>';
-                      $html .= '</div>';         
+                  	  $html .= '"></div>';
+                      $html .= '<div class="card-body"><a href="'.get_the_permalink().'">' . $clean_title . '</a>';
+                      $html .= '</div></div></div>';         
                        endwhile;
                   endif;
             wp_reset_query();  // Restore global post data stomped by the_post().
@@ -93,7 +95,6 @@ function splot_display_splots(){
 }
 
 add_shortcode( 'show-splots', 'splot_display_splots' );
-
 
 
 

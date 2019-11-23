@@ -63,6 +63,37 @@ function splot_get_wild_examples(){
 	}
 }
 
+//get the splots
+function splot_display_splots(){
+  $html = "";
+  $args = array(
+      'posts_per_page' => 10,
+      'post_type'   => 'splot', 
+      'post_status' => 'publish', 
+      'nopaging' => false,
+                    );
+    $i = 0;
+    $the_query = new WP_Query( $args );
+                    if( $the_query->have_posts() ): 
+                      while ( $the_query->have_posts() ) : $the_query->the_post();
+                      global $post;
+                      $clean_title = sanitize_title(get_the_title());                            
+                      $html .= '<div class="col-md-3">';
+                      if (has_post_thumbnail()){
+                      	$html .= get_the_post_thumbnail($post->ID,'medium', array( 'class' => 'img-fluid splot-thumb' ));
+                  		} else {
+                  			$html .= '<img class="img-fluid splot-thumb" src="' . get_stylesheet_directory_uri() . '/imgs/no-thumb.png">';
+                  		}
+                      $html .= '<a href="'.get_the_permalink().'">' . $clean_title . '</a>';
+                      $html .= '</div>';         
+                       endwhile;
+                  endif;
+            wp_reset_query();  // Restore global post data stomped by the_post().
+   return '<div class="row splot-wrapper">' . $html . '</div>';
+}
+
+add_shortcode( 'show-splots', 'splot_display_splots' );
+
 
 
 

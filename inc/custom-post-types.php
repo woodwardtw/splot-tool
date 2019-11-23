@@ -177,3 +177,16 @@ function create_splot_taxonomies() {
 
     register_taxonomy( 'type', array( 'splot' ), $args );
 }
+
+add_filter('pre_get_posts', 'splot_query_post_type');
+function splot_query_post_type($query) {
+  if(is_category() || is_tag()) {
+    $post_type = get_query_var('post_type');
+    if($post_type)
+        $post_type = $post_type;
+    else
+        $post_type = array('post','splot');
+    $query->set('post_type',$post_type);
+    return $query;
+    }
+}

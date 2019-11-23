@@ -61,7 +61,7 @@ defined( 'ABSPATH' ) || exit;
 					?>
 				</div>
 				<div class="meta-holder col-md-4">
-					<h2>SPLOT Type</h2>
+					<h2>SPLOT Details</h2>
 					<?php 
 					$cats = get_the_terms($post->ID, 'type');
 					if ( ! empty( $cats ) ) {
@@ -79,11 +79,11 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 				<div class="offset-md-3 col-md-6">
 					<!--form sub example-->
-					<div class="accordion" id="accordionExample">
+					<div class="accordion" id="splot-sub">
 					  <div class="card">
 					    <div class="card-header" id="headingOne">
 					      <h2 class="mb-0">
-					        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#splotSub" aria-expanded="true" aria-controls="collapseOne">
+					        <button class="btn btn-link btn-sub-splot" type="button" data-toggle="collapse" data-target="#splotSub" aria-expanded="true" aria-controls="collapseOne">
 					          Submit an example of this SPLOT.
 					        </button>
 					      </h2>

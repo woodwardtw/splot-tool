@@ -5,7 +5,7 @@ body {
 	font-family: 'Lato', sans-serif;
 }
 
-p {
+p, .splot-desc {
 	font-family: sans-serif;
 }
 
@@ -52,4 +52,19 @@ h1, h2, h3, .navbar-brand {
 	padding: 20px;
 	margin-bottom: 20px;
 	background-color: #efefef;
+}
+
+.btn-sub-splot {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.btn-sub-splot:hover {
+	background-color: $yellow;
+}
+
+#splot-sub {
+	margin-top: 60px;
+	margin-bottom: 20px;
 }

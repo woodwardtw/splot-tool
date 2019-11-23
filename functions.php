@@ -36,7 +36,7 @@ foreach ( $understrap_includes as $file ) {
 	require_once $filepath;
 }
 
-
+//GRAVITY FORM LOOP for SPLOT EXAMPLES
 function splot_get_wild_examples(){
 	    global $post;
 		$search_criteria = array(
@@ -49,14 +49,21 @@ function splot_get_wild_examples(){
 	    )
 	);
 	$entries = GFAPI::get_entries( 1, $search_criteria );
-	$html = '<ul>';
-	foreach ($entries as $key => $entry) {
-		$title = $entry[1];
-		$url = $entry[2];
-		$html .= '<li><a href="' . $url . '">' . $title . '</a></li>';
+	if ($entries){
+		$html = '<ul>';
+		foreach ($entries as $key => $entry) {
+			$title = $entry[1];
+			$url = $entry[2];
+			$desc = $entry[3];
+			$html .= '<li><a href="' . $url . '">' . $title . '</a><div class="splot-desc">' . $desc . '</div></li>';
+		}
+		return $html . '</ul>';
+	} else {
+		return 'No examples of this SPLOT yet.';
 	}
-	return $html . '</ul>';
 }
+
+
 
 
 //happy little logging function

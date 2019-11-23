@@ -96,6 +96,16 @@ function splot_display_splots(){
 
 add_shortcode( 'show-splots', 'splot_display_splots' );
 
+//TIMELINE
+function special_timeline_update($entry, $form){
+    $time = rgar($entry, '1');//assumes the gform date field is field 1 if not change it
+    $post = get_post( $entry['post_id'] );
+    $post->post_date = $time;
+    $post->post_date_gmt = get_gmt_from_date( $time );
+    wp_update_post($post);
+}
+ 
+add_action( 'gform_after_submission_2', 'special_timeline_update', 10, 2 );//set to run off form 5 if not 
 
 
 //happy little logging function
@@ -108,3 +118,4 @@ add_shortcode( 'show-splots', 'splot_display_splots' );
 	      }
 	   }
 	}
+

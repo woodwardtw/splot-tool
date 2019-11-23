@@ -78,16 +78,16 @@ function splot_display_splots(){
                       while ( $the_query->have_posts() ) : $the_query->the_post();
                       global $post;
                       $clean_title = sanitize_title(get_the_title());                            
-                      $html .= '<div class="col-md-6 d-flex align-items-stretch"><div class="card splot-card">';
-                      $html .= '<a href="'.get_the_permalink().'"><div class="splot-thumb" class="img-fluid" style="background-image:url(';
+                      $html .= '<div class="col-md-6 d-flex align-items-stretch"><a href="'.get_the_permalink().'"><div class="card splot-card">';
+                      $html .= '<div class="splot-thumb" class="img-fluid" style="background-image:url(';
                       if (has_post_thumbnail()){
                       	$html .= get_the_post_thumbnail_url($post->ID,'large');
                   		} else {
                   		 $html .= get_stylesheet_directory_uri() . '/imgs/no-thumb.png';
                   		}
-                  	  $html .= ')"></a></div>';
-                      $html .= '<div class="card-body"><a href="'.get_the_permalink().'"><h2>' . $clean_title . '</h2></a>';
-                      $html .= '</div></div></div>';         
+                  	  $html .= ')"></div>';
+                      $html .= '<div class="card-body"><h2>' . $clean_title . '</h2>';
+                      $html .= '</div></a></div></div>';         
                        endwhile;
                   endif;
             wp_reset_query();  // Restore global post data stomped by the_post().

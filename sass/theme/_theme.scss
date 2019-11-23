@@ -70,12 +70,15 @@ h1, h2, h3, .navbar-brand {
 }
 
 .splot-thumb {
-	max-height: 400px;
-	width: 100%;
+	height: 300px;
+	width: 400px;
 	overflow: hidden;
+	display: block;
+	background-size: cover;	
 }
 
 .splot-card {
 	margin-bottom: 40px;
 	border-radius: 0;
+	overflow: hidden;
 }

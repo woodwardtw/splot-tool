@@ -45,7 +45,7 @@ defined( 'ABSPATH' ) || exit;
 
 		</div><!-- .entry-content -->
 		<div class="splot-meta row">
-				<div class="col-md-12"><a class="btn btn-splot" href="<?php echo splot_get_field('url');?>">See the SLOT Live</a></div>		
+				<div class="col-md-12"><a class="btn btn-splot" href="<?php echo splot_get_field('url');?>">See the SPLOT Live</a></div>		
 				<div class="meta-holder col-md-4">
 					<h2>Media Focus</h2>
 					<?php 

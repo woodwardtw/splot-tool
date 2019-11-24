@@ -86,7 +86,7 @@ function splot_display_splots(){
                   		 $html .= get_stylesheet_directory_uri() . '/imgs/no-thumb.png';
                   		}
                   	  $html .= ')"></div>';
-                      $html .= '<div class="card-body"><h2>' . $clean_title . '</h2>';
+                      $html .= '<div class="card-body"><h2>' . get_the_title() . '</h2>';
                       $html .= '</div></a></div></div>';         
                        endwhile;
                   endif;

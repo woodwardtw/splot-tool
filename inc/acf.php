@@ -37,10 +37,11 @@ if (class_exists('ACF')) {
     	$title = $data[0]['value'];
     	$url = $data[1]['value'];
     	$text = $data[2]['value'];
-    	$cats = $data[3]['value'];
-    	$image = $data[4]['value']['ID'];
+    	$type = $data[3]['value'];
+    	$cats = $data[4]['value'];
+    	$image = $data[5]['value']['ID'];
     	$content = $text . '<a class="btn btn-primary" href="'. $url .'">See the SPLOT in Action</a>';
-
+    	 write_log( $data);
 
     	$args = array(
             'post_title' => wp_strip_all_tags($title),
@@ -54,7 +55,7 @@ if (class_exists('ACF')) {
         update_field('splot_title', $title, $post_id);
         update_field('url', $url, $post_id);
         update_field('description', $text, $post_id);
-
+        wp_set_post_terms( $post_id, $type, 'type' );
 	}
 	 
 	add_action( 'af/form/submission', 'splot_handle_form_submission', 10, 3 );

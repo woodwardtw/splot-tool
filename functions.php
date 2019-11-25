@@ -67,7 +67,7 @@ function splot_get_wild_examples(){
 function splot_display_splots(){
   $html = "";
   $args = array(
-      'posts_per_page' => 10,
+      'posts_per_page' => 30,
       'post_type'   => 'splot', 
       'post_status' => 'publish', 
       'nopaging' => false,

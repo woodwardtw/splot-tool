@@ -90,6 +90,14 @@ h1, h2, h3, .navbar-brand {
 }
 
 
-[data-id="13"] {
+[data-id="13"], [data-id="18"]  {
 	display: none !important;
 	}
+
+.entry-content {
+	margin-top: 20px;
+}	
+
+.entry-meta {
+	display: none;
+}

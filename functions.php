@@ -71,6 +71,7 @@ function splot_display_splots(){
       'post_type'   => 'splot', 
       'post_status' => 'publish', 
       'nopaging' => false,
+      'orderby'        => 'rand',
                     );
     $i = 0;
     $the_query = new WP_Query( $args );

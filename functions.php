@@ -82,7 +82,7 @@ function splot_display_splots(){
                       $html .= '<div class="col-md-6 d-flex align-items-stretch"><a href="'.get_the_permalink().'"><div class="card splot-card">';
                       $html .= '<div class="splot-thumb" class="img-fluid" style="background-image:url(';
                       if (has_post_thumbnail()){
-                      	$html .= get_the_post_thumbnail_url($post->ID,'large');
+                      	$html .= get_the_post_thumbnail_url($post->ID,'medium');
                   		} else {
                   		 $html .= get_stylesheet_directory_uri() . '/imgs/no-thumb.png';
                   		}

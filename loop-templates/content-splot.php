@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 		<div class="col-md-6">
 			<?php 
 			if (has_post_thumbnail()){
-				echo get_the_post_thumbnail( $post->ID, 'large' ); 
+				echo get_the_post_thumbnail( $post->ID, 'medium' ); 
 			} else {
 				echo '<img class="img-fluid splot-screenshot" src="' . get_field('image')['sizes']['large'] . '">';
 			}
